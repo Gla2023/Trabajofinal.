@@ -6,7 +6,7 @@ Created on Thu Sep 21 16:54:52 2023
 """
 import generarcantidadproducto
 import pedirparametros
-def demanda(a, b):
+def demanda(a_demanda, b_demanda):
     """
     INPUT none
     OUTPUT Demand linear function
@@ -17,6 +17,6 @@ def demanda(a, b):
     f(x)= precio
     """
     cantidad_producto=generarcantidadproducto.cantidad_productos()
-    a_demanda, b_demanda= pedirparametros()
+    a_demanda, b_demanda= pedirparametros.pedir_parametros()
     demanda = a_demanda * cantidad_producto + b_demanda
     return demanda

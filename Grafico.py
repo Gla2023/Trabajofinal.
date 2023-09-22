@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import excesodedemanda
 import Excesodeoferta
 
-def graficar_oferta_demanda2():
+def graficar_oferta_demanda():
     """
     INPUT none
     OUTPUT Supply and demand graph
@@ -54,4 +54,4 @@ def graficar_oferta_demanda2():
     plt.grid(True)
     plt.show()
 
-    return integral_result
+  

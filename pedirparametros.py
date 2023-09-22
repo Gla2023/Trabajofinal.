@@ -5,7 +5,7 @@ Created on Fri Sep 22 09:55:45 2023
 @author: glady
 """
 
-def pedir_parámetros():
+def pedir_parametros():
     """
     INPUT none
     OUTPUT parametros de las funciones lineales.
@@ -15,4 +15,3 @@ def pedir_parámetros():
     b = float(input("Ingrese un número para la ordenada al origen de la función: "))
     
     return a, b
-    

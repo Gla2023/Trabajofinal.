@@ -8,9 +8,7 @@ import fl1
 import fl2
 import excesodedemanda
 import equilibrio
-def main():
-    import Preciodeequilibrio
-import equilibriocuadratica
+import Grafico
 
 def main():
     print("Vamos a modelizar la oferta y la demanda")
@@ -20,18 +18,15 @@ def main():
                      ":......")
 
     if Eleccion == "l":
-                        Preciodeequilibrio()
-        
-       
+        oferta=fl2.oferta()                
+        demanda=fl1.demanda()
+        equilibrio.precio_equilibrio(demanda, oferta)
+        excesodedemanda.calcular_area()
+        Grafico.graficar_oferta_demanda
     elif Eleccion == "c":
-                        equilibriocuadratica()
-       
-    else:
-        print("Elección inválida")
-
-
-        if __name__ == "__main__":
-            result = main()
+                        
+            if __name__ == "__main__":
+                result = main()
     print(result)
 
 
