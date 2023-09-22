@@ -16,7 +16,7 @@ def demanda(a, b):
     x=cantidad de producto
     f(x)= precio
     """
-    cantidad_producto=generarcantidadproducto()
+    cantidad_producto=generarcantidadproducto.cantidad_productos()
     a_demanda, b_demanda= pedirparametros()
     demanda = a_demanda * cantidad_producto + b_demanda
     return demanda

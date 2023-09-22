@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Sep 22 10:21:58 2023
+Created on Fri Sep 22 12:10:24 2023
 
 @author: glady
 """
+
 import equilibrio
 import fl1
 import fl2
@@ -18,12 +19,8 @@ def calcular_area():
     demanda=fl1.demanda()
     oferta= fl2.oferta()
     x_equilibrio = equilibrio.precio_equilibrio(demanda, oferta)
-    f_x = demanda(x_equilibrio[0])
-    g_x= equilibrio.precio_equilibrio(x_equilibrio[0])
+    f_x = equilibrio.precio_equilibrio(x_equilibrio[0])
+    g_x= oferta(x_equilibrio[0])
     h= f_x - g_x
-    integral_result = quad(h, 0, x_equilibrio[0])
-    return  integral_result
-
-
- 
-  
+    integral_result2 = quad(h, 0, x_equilibrio[0])
+    return  integral_result2
