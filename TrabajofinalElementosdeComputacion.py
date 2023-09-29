@@ -25,15 +25,14 @@ def equilibrio_func(x):
     """
     return oferta.subs('x', x) - demanda.subs('x', x)
 
-oferta_str = input("Ingrese la función de oferta (ejemplo: 42*x): ")
-demanda_str = input("Ingrese la función de demanda (ejemplo: 1000-0.4*x*x): ")
+oferta_str = input("Ingrese la fórmula de la función de oferta (m*x+b or ax*x+b*x+c): ")
+demanda_str = input("Ingrese la fómula de la función de demanda ( m*x+b or ax*x+b*x+c): ")
 
 x = sp.Symbol('x')
 oferta = sp.sympify(oferta_str)
 demanda = sp.sympify(demanda_str)
 
 equilibrio = brentq(equilibrio_func, 0, 1000)
-assert abs(equilibrio - 19.999999999999996) < 1e-10, f"Error en el punto de equilibrio: {equilibrio}"
 
 print(f"El precio de equilibrio es {equilibrio}")
 
@@ -59,9 +58,6 @@ print(f"El exceso de demanda es {exceso_demanda}")
 
 exceso_oferta = abs((equilibrio * oferta.subs('x', equilibrio)) - integral(oferta, 0, equilibrio))
 print(f"El exceso de oferta es {exceso_oferta}")
-
-assert abs(exceso_demanda - 2133.33333333333) < 1e-10, f"Error en el superávit de los consumidores: {exceso_demanda}"
-assert abs(exceso_oferta - 8400.00000000000) < 1e-10, f"Error en el superávit de los productores: {exceso_oferta}"
 
 x_values = np.linspace(0, equilibrio * 2, 400)
 oferta_values = [oferta.subs('x', val) for val in x_values]
