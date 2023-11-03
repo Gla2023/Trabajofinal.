@@ -4,14 +4,6 @@ import matplotlib.pyplot as plt
 from scipy.optimize import brentq
 from matplotlib.patches import Polygon
 
-def variable_x():
-    """ 
-    Input: None
-    Output: Array
-    """
-    x = sp.Symbol('x')
-    return x
-
 def equilibrio_func(x):
     """
     Parameters:
@@ -25,8 +17,8 @@ def equilibrio_func(x):
     """
     return oferta.subs('x', x) - demanda.subs('x', x)
 print("Modelización de la oferta y la demanda en una economía competitiva y libre ")
-oferta_str = input("Ingrese la fórmula de la función de oferta (-m*x+b or -ax*x+b*x+c): ")
-demanda_str = input("Ingrese la fómula de la función de demanda ( m*x+b or ax*x+b*x+c): ")
+oferta_str = input("Ingrese la fórmula de la función de oferta (-4.5*x+400 or -3x*x+600*x+10000): ")
+demanda_str = input("Ingrese la fómula de la función de demanda ( 500*x-1900 or 3x*x+7*x+4): ")
 
 x = sp.Symbol('x')
 oferta = sp.sympify(oferta_str)
